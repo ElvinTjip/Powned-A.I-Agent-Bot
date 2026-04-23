@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowNed Feed</title>
+  <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-SKlgvs9oBNsVVpVr9p8bBKEVPm8FXrqkVYO4KAK/vOGp5UqSGHyBqPnrqJWh2oA" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="logo">PowNed Feed</span>
+      <span class="user-info">{{ user.email }} &mdash; <a href="/logout">uitloggen</a></span>
+    </div>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

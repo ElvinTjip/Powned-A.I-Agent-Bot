@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="feed-layout">
+
+  {% with %}
+    {% include "partials/filters.html" %}
+  {% endwith %}
+
+  <div class="feed-items" id="feed-items">
+    {% for item in items %}
+      {% set is_favorite = item.id in favorite_ids %}
+      {% include "partials/card.html" %}
+    {% endfor %}
+    {% if not items %}
+      <p class="empty-state">Geen items gevonden. Pas de filters aan of klik op "Nu vernieuwen".</p>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}

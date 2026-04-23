@@ -1,0 +1,50 @@
+<div class="card {% if is_favorite %}is-favorite{% endif %}" id="card-{{ item.id }}">
+
+  <div class="card-score {% if item.score >= 60 %}score-high{% elif item.score >= 40 %}score-mid{% else %}score-low{% endif %}">
+    {{ item.score | int }}
+  </div>
+
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="meta-source">{{ item.source.name }}</span>
+      {% if item.region %}
+        <span class="meta-region">{{ item.region }}</span>
+      {% endif %}
+      {% if item.is_paywall %}
+        <span class="meta-paywall">paywall</span>
+      {% endif %}
+      {% if item.published_at %}
+        <span class="meta-date">{{ item.published_at.strftime('%-d %b %H:%M') }}</span>
+      {% endif %}
+    </div>
+
+    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="card-title">
+      {{ item.title }}
+    </a>
+
+    {% if item.score_reason %}
+      <p class="card-reason">{{ item.score_reason }}</p>
+    {% endif %}
+  </div>
+
+  <div class="card-actions">
+    <button
+      hx-post="/items/{{ item.id }}/feedback"
+      hx-vals='{"action": "favorite"}'
+      hx-target="#card-{{ item.id }}"
+      hx-swap="outerHTML"
+      class="btn-action btn-fav {% if is_favorite %}active{% endif %}"
+      title="{% if is_favorite %}Verwijder favoriet{% else %}Markeer als favoriet{% endif %}"
+    >{% if is_favorite %}★{% else %}☆{% endif %}</button>
+
+    <button
+      hx-post="/items/{{ item.id }}/feedback"
+      hx-vals='{"action": "hide"}'
+      hx-target="#card-{{ item.id }}"
+      hx-swap="outerHTML"
+      class="btn-action btn-hide"
+      title="Verberg dit item"
+    >✕</button>
+  </div>
+
+</div>

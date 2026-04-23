@@ -1,0 +1,38 @@
+<aside class="filters">
+  <h2>Filters</h2>
+
+  <form method="GET" action="/" id="filter-form">
+    <label>
+      Regio
+      <select name="region" onchange="this.form.submit()">
+        <option value="">Alle regio's</option>
+        {% for r in regions %}
+          <option value="{{ r }}" {% if r == selected_region %}selected{% endif %}>{{ r }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label>
+      Min. score: <span class="score-display" id="score-val">{{ threshold }}</span>
+      <input
+        type="range"
+        name="min_score"
+        min="0"
+        max="100"
+        step="5"
+        value="{{ threshold }}"
+        oninput="document.getElementById('score-val').textContent = this.value"
+        onchange="this.form.submit()"
+      >
+    </label>
+  </form>
+
+  <button
+    hx-post="/admin/run-pipeline"
+    hx-swap="none"
+    hx-indicator=".btn-refresh"
+    class="btn-refresh"
+  >
+    Nu vernieuwen
+  </button>
+</aside>

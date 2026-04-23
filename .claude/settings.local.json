@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker --version)",
+      "Bash(poetry --version)",
+      "Bash(python3 -m pip list)",
+      "Bash(brew --version)",
+      "Bash(brew list *)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(brew install *)",
+      "Bash(/opt/homebrew/bin/python3.11 --version)",
+      "Bash(/opt/homebrew/bin/python3.11 -m venv .venv)",
+      "Bash(.venv/bin/pip install *)",
+      "Bash(.venv/bin/python -c \"import fastapi, uvicorn, jinja2, sqlalchemy; print\\('OK'\\)\")",
+      "Bash(.venv/bin/python demo_server.py)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/)",
+      "Bash(kill %1)",
+      "Bash(.venv/bin/pip show *)",
+      "Bash(lsof -ti:8000)",
+      "Bash(xargs kill *)",
+      "Bash(open http://localhost:8000)"
+    ]
+  }
+}
