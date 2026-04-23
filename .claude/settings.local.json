@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:/Users/elvin/Downloads/A.i Agent/Powned-A.I-Agent-Bot\" remote get-url origin)",
+      "Bash(netstat -ano)",
+      "Bash(start http://localhost)"
+    ]
+  }
+}
