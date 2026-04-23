@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PowNed Feed</title>
-  <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-SKlgvs9oBNsVVpVr9p8bBKEVPm8FXrqkVYO4KAK/vOGp5UqSGHyBqPnrqJWh2oA" crossorigin="anonymous"></script>
+  <title>Powned+ Redactie</title>
+  <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-SKlgvs9oBNsVVpVr9p8bBKEVPm8FXrqkJWh2oA" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <span class="logo">PowNed Feed</span>
-      <span class="user-info">{{ user.email }} &mdash; <a href="/logout">uitloggen</a></span>
+      <a href="/" class="logo">Powned<span class="logo-plus">+</span></a>
+      <div class="header-user">
+        <div class="user-avatar">{{ user.email[0].upper() }}</div>
+        <span class="user-email">{{ user.email }}</span>
+        <a href="/logout" class="btn-logout">Uitloggen</a>
+      </div>
     </div>
   </header>
   <main>

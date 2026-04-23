@@ -12,7 +12,11 @@
       {% include "partials/card.html" %}
     {% endfor %}
     {% if not items %}
-      <p class="empty-state">Geen items gevonden. Pas de filters aan of klik op "Nu vernieuwen".</p>
+      <div class="empty-state dashboard-placeholder">
+        <div class="placeholder-icon">📡</div>
+        <h2>Nog geen items</h2>
+        <p>Pas de filters aan of klik op "Nu vernieuwen" om de pipeline te starten.</p>
+      </div>
     {% endif %}
   </div>
 
