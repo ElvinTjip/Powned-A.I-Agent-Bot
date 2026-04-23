@@ -26,7 +26,7 @@ Open http://localhost:8000 — in DEV_MODE you can bypass Google SSO via `/dev-l
 ## Score thresholds
 
 | Score | Behaviour |
-|-------|-----------|
+|-------|-----------| 
 | 60–100 | Prominent in feed |
 | 40–59 | Visible but lower ranked |
 | 0–39 | Filtered out (default threshold) |
