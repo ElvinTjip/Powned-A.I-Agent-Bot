@@ -18,7 +18,17 @@
       "Bash(.venv/bin/pip show *)",
       "Bash(lsof -ti:8000)",
       "Bash(xargs kill *)",
-      "Bash(open http://localhost:8000)"
+      "Bash(open http://localhost:8000)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP remote -v)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP checkout -b feature/login-dashboard-ui)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP add web/templates/login.html web/templates/base.html web/templates/feed.html web/static/style.css)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP diff --staged --stat)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP commit -m ' *)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP push -u origin feature/login-dashboard-ui)",
+      "Bash(open \"http://localhost:8000/login\")",
+      "Bash(open \"http://localhost:8000/\")",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP status)",
+      "Bash(git -C /Users/coengeldof/Desktop/CLAUDE_MAP log --oneline -3)"
     ]
   }
 }
